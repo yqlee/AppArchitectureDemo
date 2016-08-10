@@ -2,6 +2,7 @@
     <string name="app_name">AppArchitectureDemo</string>
 
     <string name="txt_loading">数据加载中...</string>
+    <string name="txt_has_no_more">没有更多了</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

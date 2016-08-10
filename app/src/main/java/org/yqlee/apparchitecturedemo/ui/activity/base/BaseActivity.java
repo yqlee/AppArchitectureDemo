@@ -26,10 +26,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
         isDestroy = false;
-        if (getLayoutResID()>0){
+        if (getLayoutResID() > 0) {
             setContentView(getLayoutResID());
             ButterKnife.bind(this);
         }
+        afterView(savedInstanceState);
     }
 
     /**
@@ -38,6 +39,8 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @return 返回值必须大于0
      */
     protected abstract int getLayoutResID();
+
+    protected abstract void afterView(Bundle savedInstanceState);
 
     @Override
     protected void onDestroy() {
