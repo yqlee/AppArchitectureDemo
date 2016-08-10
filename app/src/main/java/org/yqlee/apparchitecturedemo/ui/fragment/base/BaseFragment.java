@@ -11,7 +11,13 @@ import android.view.ViewGroup;
 
 import org.yqlee.apparchitecturedemo.ui.activity.base.BaseActivity;
 
+import butterknife.ButterKnife;
 
+/**
+ * 创建者：yqlee
+ * 时间 ：2016-08-10 下午 12:30
+ * 描述 ：Fragment的抽取，第一层
+ */
 public abstract class BaseFragment extends Fragment {
 
     protected BaseActivity mActivity;
@@ -31,6 +37,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = initRootView(inflater);
+        ButterKnife.bind(this, rootView);
         isViewPrepared = true;
         return rootView;
     }

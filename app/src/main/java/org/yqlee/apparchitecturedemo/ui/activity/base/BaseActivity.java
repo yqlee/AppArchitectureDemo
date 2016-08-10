@@ -9,6 +9,8 @@ import org.yqlee.apparchitecturedemo.R;
 import org.yqlee.apparchitecturedemo.common.manager.AppManager;
 import org.yqlee.apparchitecturedemo.common.utils.ToastUtil;
 
+import butterknife.ButterKnife;
+
 /**
  * 创建者：yqlee
  * 时间 ：2016/8/9  下午 5:46
@@ -26,6 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         isDestroy = false;
         if (getLayoutResID()>0){
             setContentView(getLayoutResID());
+            ButterKnife.bind(this);
         }
     }
 
