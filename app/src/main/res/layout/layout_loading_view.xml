@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <org.yqlee.apparchitecturedemo.ui.widget.LoadingProgressView
+        android:id="@+id/pull_to_refresh_progress"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        wheel:matProg_barColor="@color/red"
+        wheel:matProg_barWidth="4dip"
+        wheel:matProg_progressIndeterminate="true"
+        wheel:matProg_rimColor="#f0f0f0"
+        wheel:matProg_rimWidth="4dip" />
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/tx_loading"
+        android:textColor="@color/clr_gray_8a92a1"
+        android:textSize="15sp" />
+</LinearLayout>
