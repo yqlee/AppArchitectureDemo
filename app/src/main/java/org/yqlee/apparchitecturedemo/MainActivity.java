@@ -1,41 +1,86 @@
 package org.yqlee.apparchitecturedemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import org.yqlee.apparchitecturedemo.bean.BaseEntity;
+import org.yqlee.apparchitecturedemo.bean.SubjectEntity;
+import org.yqlee.apparchitecturedemo.netbusiness.AppNetFactory;
+import org.yqlee.apparchitecturedemo.ui.activity.base.BaseActivity;
 
-    private Button bt_common_page;
-    private  Button bt_listview_page;
-    private  Button bt_recyclerview_page;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import rx.Subscriber;
+
+public class MainActivity extends BaseActivity {
+
+    private static final String TAG = "MainActivity";
+
+    @BindView(R.id.bt_common_page)
+    Button bt_common_page;
+    @BindView(R.id.bt_listview_page)
+    Button bt_listview_page;
+    @BindView(R.id.bt_recyclerview_page)
+    Button bt_recyclerview_page;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initView();
-    }
-
-    private void initView() {
-        bt_common_page = (Button) findViewById(R.id.bt_common_page);
-        bt_common_page.setOnClickListener(this);
-        bt_listview_page = (Button) findViewById(R.id.bt_listview_page);
-        bt_listview_page.setOnClickListener(this);
-        bt_recyclerview_page = (Button) findViewById(R.id.bt_recyclerview_page);
-        bt_recyclerview_page.setOnClickListener(this);
+    protected int getLayoutResID() {
+        return R.layout.activity_main;
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.bt_common_page:
-                break;
-            case R.id.bt_listview_page:
-                break;
-            case R.id.bt_recyclerview_page:
-                break;
-        }
+    protected void afterView(Bundle savedInstanceState) {
+
     }
+
+    @OnClick(R.id.bt_common_page)
+    void go2CommonPage() {
+
+        AppNetFactory.getMovieSubjects(new Subscriber<BaseEntity<List<SubjectEntity>>>() {
+
+            @Override
+            public void onStart() {
+                super.onStart();
+                showLoading(true);
+                Log.d(TAG, "onStart");
+                showToast("onStart");
+            }
+
+            @Override
+            public void onCompleted() {
+                showLoading(false);
+                Log.d(TAG, "onCompleted");
+                showToast("onCompleted");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                showLoading(false);
+                Log.d(TAG, "onError");
+                showToast("onError");
+            }
+
+            @Override
+            public void onNext(BaseEntity<List<SubjectEntity>> listBaseEntity) {
+                Log.d(TAG, listBaseEntity.toString());
+                showToast("获取数据成功");
+                showLoading(false);
+            }
+        }, 0, 10);
+    }
+
+    @OnClick(R.id.bt_listview_page)
+    void go2ListViewPage() {
+        showToast("ListView页面，待开发");
+        showLoading(true);
+    }
+
+    @OnClick(R.id.bt_recyclerview_page)
+    void go2RecyclerViewPage() {
+        showToast("RecyclerView页面，待开发");
+    }
+
 }

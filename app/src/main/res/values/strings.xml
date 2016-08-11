@@ -3,6 +3,7 @@
 
     <string name="txt_loading">数据加载中...</string>
     <string name="txt_has_no_more">没有更多了</string>
+    <string name="txt_no_net">网络中断，请检查您的网络状态</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
