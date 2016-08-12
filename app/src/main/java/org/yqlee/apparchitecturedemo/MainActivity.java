@@ -7,6 +7,7 @@ import android.widget.Button;
 import org.yqlee.apparchitecturedemo.bean.BaseEntity;
 import org.yqlee.apparchitecturedemo.bean.SubjectEntity;
 import org.yqlee.apparchitecturedemo.netbusiness.AppNetFactory;
+import org.yqlee.apparchitecturedemo.ui.activity.ListViewPageActivity;
 import org.yqlee.apparchitecturedemo.ui.activity.base.BaseActivity;
 
 import java.util.List;
@@ -74,8 +75,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.bt_listview_page)
     void go2ListViewPage() {
-        showToast("ListView页面，待开发");
-        showLoading(true);
+        ListViewPageActivity.startActivity(this);
     }
 
     @OnClick(R.id.bt_recyclerview_page)

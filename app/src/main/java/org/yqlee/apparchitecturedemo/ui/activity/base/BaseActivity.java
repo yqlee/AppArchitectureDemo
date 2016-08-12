@@ -4,6 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.TextView;
 
 import org.yqlee.apparchitecturedemo.R;
 import org.yqlee.apparchitecturedemo.common.manager.AppManager;
@@ -20,6 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private boolean isDestroy;
     private ProgressDialog mProgressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +92,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
         startActivity(intent);
         overridePendingTransition(0, 0);
+    }
+
+    protected void initToolbar(Toolbar toolbar, TextView textView, String title, View.OnClickListener listener) {
+        toolbar.setNavigationIcon(R.mipmap.ic_point2_left);
+        toolbar.setNavigationOnClickListener(listener);
+        toolbar.setOverflowIcon(null);
+        textView.setText(title);
     }
 
 }

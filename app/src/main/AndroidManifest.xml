@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.recyclerviewpage.ListViewPageListview"/>
+        <activity android:name=".ui.activity.recyclerviewpage.ListViewPageListview" />
+        <activity android:name=".ui.activity.ListViewPageActivity" />
+        <activity android:name=".ui.activity.RecyclerViewPageActivity"></activity>
     </application>
 
 </manifest>

@@ -102,6 +102,9 @@ public abstract class BasePtrListActivity<T> extends BaseActivity implements Abs
 
     @Override
     public void onRefreshBegin(PtrFrameLayout frame) {
+        if (mListView.getFooterViewsCount()==0){
+            mListView.addFooterView(mFooterView);
+        }
         onRefresh(frame);
     }
 
