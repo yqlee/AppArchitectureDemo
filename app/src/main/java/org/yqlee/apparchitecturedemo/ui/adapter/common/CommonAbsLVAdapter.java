@@ -12,16 +12,16 @@ import java.util.List;
  * @时间 ：2016/3/23  15:35
  * @描述 ：模板方法模式再抽取BaseAdapter
  */
-public abstract class CommonAdapter<T> extends BaseAdapter {
+public abstract class CommonAbsLVAdapter<T> extends BaseAdapter {
 
     protected List<T> mDatas;
     protected Context mContext;
 
-    public CommonAdapter(Context context) {
+    public CommonAbsLVAdapter(Context context) {
         this.mContext = context;
     }
 
-    public CommonAdapter(Context context, List<T> datas) {
+    public CommonAbsLVAdapter(Context context, List<T> datas) {
         this.mContext = context;
         this.mDatas = datas;
     }

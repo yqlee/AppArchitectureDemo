@@ -7,7 +7,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.yqlee.apparchitecturedemo.R;
-import org.yqlee.apparchitecturedemo.ui.adapter.common.CommonAdapter;
+import org.yqlee.apparchitecturedemo.ui.adapter.common.CommonAbsLVAdapter;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
@@ -23,7 +23,7 @@ import in.srain.cube.views.ptr.header.MaterialHeader;
 public abstract class BasePtrListActivity<T> extends BaseActivity implements AbsListView.OnScrollListener, PtrHandler {
 
     private ListView mListView;
-    private CommonAdapter<T> mAdapter;
+    private CommonAbsLVAdapter<T> mAdapter;
     protected FrameLayout mFooterView;
     private TextView mFooterText;
     private View mProgressWheel;
@@ -32,7 +32,7 @@ public abstract class BasePtrListActivity<T> extends BaseActivity implements Abs
     private boolean mFirstItemVisible;
     public static int PAGE_SIZE = 20;//ListView一页加载的数量
 
-    protected void initListView(PtrClassicFrameLayout ptrFrameLayout, ListView listView, CommonAdapter<T> adapter) {
+    protected void initListView(PtrClassicFrameLayout ptrFrameLayout, ListView listView, CommonAbsLVAdapter<T> adapter) {
         mListView = listView;
         mAdapter = adapter;
         mListView.setOnScrollListener(this);

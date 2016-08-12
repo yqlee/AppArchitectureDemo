@@ -8,6 +8,7 @@ import org.yqlee.apparchitecturedemo.bean.BaseEntity;
 import org.yqlee.apparchitecturedemo.bean.SubjectEntity;
 import org.yqlee.apparchitecturedemo.netbusiness.AppNetFactory;
 import org.yqlee.apparchitecturedemo.ui.activity.ListViewPageActivity;
+import org.yqlee.apparchitecturedemo.ui.activity.RecyclerViewPageActivity;
 import org.yqlee.apparchitecturedemo.ui.activity.base.BaseActivity;
 
 import java.util.List;
@@ -80,7 +81,10 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.bt_recyclerview_page)
     void go2RecyclerViewPage() {
-        showToast("RecyclerView页面，待开发");
+
+        RecyclerViewPageActivity.startActivity(this);
+
+//        showToast("RecyclerView页面，待开发");
     }
 
 }

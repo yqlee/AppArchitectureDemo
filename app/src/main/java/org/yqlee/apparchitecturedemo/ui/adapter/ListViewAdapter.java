@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import org.yqlee.apparchitecturedemo.R;
 import org.yqlee.apparchitecturedemo.bean.SubjectEntity;
-import org.yqlee.apparchitecturedemo.ui.adapter.common.CommonAdapter;
+import org.yqlee.apparchitecturedemo.ui.adapter.common.CommonAbsLVAdapter;
 import org.yqlee.apparchitecturedemo.ui.adapter.common.ViewHolder;
 
 /**
@@ -13,7 +13,7 @@ import org.yqlee.apparchitecturedemo.ui.adapter.common.ViewHolder;
  * 时间 ：2016-08-12 上午 9:34
  * 描述 ：ListView的Adapter
  */
-public class ListViewAdapter extends CommonAdapter<SubjectEntity> {
+public class ListViewAdapter extends CommonAbsLVAdapter<SubjectEntity> {
 
     public ListViewAdapter(Context context) {
         super(context);

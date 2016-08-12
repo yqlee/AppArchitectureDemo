@@ -43,7 +43,7 @@ public class ListViewPageActivity extends BasePtrListActivity<SubjectEntity> imp
     private ListViewAdapter mAdapter;
     private int startNum = 0;
 
-    public static final void startActivity(BaseActivity mActivity) {
+    public static void startActivity(BaseActivity mActivity) {
         Intent intent = new Intent(mActivity, ListViewPageActivity.class);
         mActivity.startActivity(intent);
     }

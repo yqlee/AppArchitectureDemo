@@ -8,7 +8,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.yqlee.apparchitecturedemo.R;
-import org.yqlee.apparchitecturedemo.ui.adapter.common.CommonAdapter;
+import org.yqlee.apparchitecturedemo.ui.adapter.common.CommonAbsLVAdapter;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
@@ -31,7 +31,7 @@ public abstract class BasePtrListFragment<T> extends BaseFragment implements Abs
     private FrameLayout mFooterView;
     private TextView mFooterText;
     protected ListView mListView;
-    protected CommonAdapter<T> mAdapter;
+    protected CommonAbsLVAdapter<T> mAdapter;
 
 
     private int mMinSizeWhenShowText = 5;
@@ -44,7 +44,7 @@ public abstract class BasePtrListFragment<T> extends BaseFragment implements Abs
         afterView(view);
     }
 
-    public void initListView(PtrClassicFrameLayout mPtrFrameLayout, ListView lv, CommonAdapter<T> adapter) {
+    public void initListView(PtrClassicFrameLayout mPtrFrameLayout, ListView lv, CommonAbsLVAdapter<T> adapter) {
         mListView = lv;
         mAdapter = adapter;
         mListView.setOnScrollListener(this);
